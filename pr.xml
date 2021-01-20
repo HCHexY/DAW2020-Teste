@@ -26,29 +26,40 @@
             Para carregar o json para uma base de dados Mongo utilizei o comando "mongoimport -d DAW-2020-Teste -c batismos --jsonArray batismosready.json"
         </p>
         <p>
-            De seguida utilizei uma aplicação express para responder ás rotas. Está na pasta apiBatismos:
+            De seguida utilizei uma aplicação express sem views para responder ás rotas. Está na pasta apiBatismos:
                 -Um modelo para a estrutura de dados no mongo
                 -Um controller com as rotas necessárias
         </p>
-        <p>Exercicio 2</p>
         <p>
+            Embora não tenha conseguido obter o _id nas respostas do mongo, utilizei o ref com as mesmas alteraçoes que fiz no datacleanse para consguir indexar por id. No entanto não considero que tenha sido significativamente diferente pois para quase todas as rotas, as capabilidades do mongo são o que constroem o objeto de resposta.
+        </p>
+        <p>Exercicio 2</p>
+        <p>Perguntas de aquecimento:</p>
+        <p> Pergunta 1:
             Existem 2 processos de nivel 3 descendentes da classe 900
             http://clav-api.di.uminho.pt/v2/classes/c900/descendencia?nivel=3&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
         </p>
-        <p>
+        <p> Pergunta 2:
             Com a query indicada obtemos as entidades todas do CLAV
             http://clav-api.di.uminho.pt/v2/entidades?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
         </p>
-        <p>
+        <p> Pergunta 3:
             Com a query indicada obtemos todas as descendencias de nivel 3 do processo 900.10
             http://clav-api.di.uminho.pt/v2/classes/c900.10?nivel=3&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
         </p>
-        <p>
+        <p> Pergunta 4:
             Com a query indicada obtemos os processo de nivel 3 relacionados com o processo 900.10.505
             http://clav-api.di.uminho.pt/v2/classes/c900.10.505/procRel?nivel=3&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
         </p>
         <p>
-
+            Para responder a estas rotas utilizei um servidor express com as views em PUG, visto que o objetivo é responder com HTML usando a API do CLAV para obter os dados, apenas foi necessário o index router.
+        </p>
+        <p>
+            A página inicial é então os dois links para uma página de classes e outra de termos de indice.
+            A página das classes lista todas as classes de mais alto nível e graças aos links da descendencia podemos navegar ao longo das árvores.
+            Quando atingimos o nivel 3 podemos ver que também estão listados os termos de indice da classe com referencia não só para o indice dos termos de indice como tambem para a sua exata posição nessa página através do id HTML baseado no atributo id do termo de indice.
+            Na página dos termos de indice estão listados todos os termos de indice.
+            Todas as listas são <i>Unordered Lists</i>.
         </p>
     </abstract>
     <deliverables>
