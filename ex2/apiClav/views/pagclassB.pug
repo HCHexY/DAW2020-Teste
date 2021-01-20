@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{classe.codigo}
+  ul
+    each elem in Object.keys(classe)
+      if(elem=="pai")
+        li Pai :
+          a(href=`/classe/${classe.pai.codigo}`)
+            #{classe.pai.codigo}
+      else if(elem!="filhos")
+        li #{elem}: #{classe[elem]}
+  ul
+    h3 Descencentes
+    each elem in desc
+      li Código: 
+        a(href=`/classe/${elem.codigo}`) 
+          #{elem.codigo}
+
+  a(href='/') [Voltar ao inicio]

@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{classe.codigo}
+  ul
+    li Titulo:
+      p  #{classe.titulo}
+    li Descrição:
+      p  #{classe.descricao}
+    li Pai :
+        a(href=`/classe/${classe.pai.codigo}`)
+          if(classe.pai)
+            p #{classe.pai.titulo}
+          else 
+            p "Não tem pai"
+    li Nivel:
+      p  #{classe.nivel}
+    li Código:
+      p  #{classe.codigo}
+    if(classe.nivel==3)  
+      li Termos de indice:
+        ul
+          each t in classe.termosInd
+            li 
+              a(href=`/termosIndice/#${t.idTI.split('#')[1]}`)
+                p #{t.termo}
+  ul
+    h3 Descencentes
+    each elem in desc
+      li Código: 
+        a(href=`/classe/${elem.codigo}`) 
+          #{elem.codigo}
+
+  a(href='/') [Voltar ao inicio]

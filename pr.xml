@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "../pr.dtd">
+<pr>
+    <meta>
+        <key>Teste DAW</key>
+        <title>Teste DAW 2020/2021</title>
+        <subtitle></subtitle>
+        <bdate>20/1/2021</bdate>
+        <edate>20/1/2021</edate>
+        <supervisor url="http://ww4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    </meta>
+    <team>
+        <member id="A84656">
+            <name>Hugo Manuel Cunha</name>
+            <email>a84656@alunos.uminho.pt</email>
+            <link url=""></link>
+        </member>
+    </team>
+    <abstract>
+        <p>Exercicio 1</p>
+        <p>
+            Para tratar o dataset acrescentei, com ajuda do find e replace do editor VSCode, aspas antes das keys dos objetos, também ajuda a descobrir onde o ficheiro não está corretamente formatado então acrescentei aspas e virgulas onde era necessário.
+            Para substituir o _id pelo ref sem / e para extrair o nome da mãe e do pai é necessário mais contexto do que o VSCode consegue suportar, por isso utilizei uma pequena aplicação em nodejs localizada na pasta datacleanse da pasta ex1.       
+        </p>
+        <p>
+            Para carregar o json para uma base de dados Mongo utilizei o comando "mongoimport -d DAW-2020-Teste -c batismos --jsonArray batismosready.json"
+        </p>
+        <p>
+            De seguida utilizei uma aplicação express para responder ás rotas. Está na pasta apiBatismos:
+                -Um modelo para a estrutura de dados no mongo
+                -Um controller com as rotas necessárias
+        </p>
+        <p>Exercicio 2</p>
+        <p>
+            Existem 2 processos de nivel 3 descendentes da classe 900
+            http://clav-api.di.uminho.pt/v2/classes/c900/descendencia?nivel=3&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
+        </p>
+        <p>
+            Com a query indicada obtemos as entidades todas do CLAV
+            http://clav-api.di.uminho.pt/v2/entidades?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
+        </p>
+        <p>
+            Com a query indicada obtemos todas as descendencias de nivel 3 do processo 900.10
+            http://clav-api.di.uminho.pt/v2/classes/c900.10?nivel=3&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
+        </p>
+        <p>
+            Com a query indicada obtemos os processo de nivel 3 relacionados com o processo 900.10.505
+            http://clav-api.di.uminho.pt/v2/classes/c900.10.505/procRel?nivel=3&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDgxMGM2NDFhYmQ1NDU0MDZkZmRkMSIsImxldmVsIjoyLCJlbnRpZGFkZSI6ImVudF9BM0VTIiwiZW1haWwiOiJkYXcyMDIwQHRlc3RlLnVtaW5oby5wdCIsImlhdCI6MTYxMTE1MjM1MywiZXhwIjoxNjExMTgxMTUzfQ.GlZ9V6RUQFtZ3SkCMauqetCDCxmowONM6IodiYAKuIR4XxiOpSkvJv4O5mKc8tNl7nRMsVAhM1i7meXXvt4tLIET9_gpqG3z9LpysfkHG-ynJSaMO2Rc3UYymYG9RUDwD0ScRT7jABwNy3zr4GR4hwwDwJDE1UMAR3Wm_sjmNGL7BCicYe9u1F87u3CEo3Z7kLvHlWXwfmXXV7s-_DX1CLmUWC0AY5F-c6Rgx-75SN450py0f-lMRFoU1n0jChn3c7m9rJHphqd5g3xgzebvZAzA7-WETvq2kR2k7lHxFy0YjNbUTAf6-6skMtOb_igJ1GODM4SPrT2wi_lqckTJFA
+        </p>
+        <p>
+
+        </p>
+    </abstract>
+    <deliverables>
+        <link url=""></link>
+    </deliverables>
+</pr>

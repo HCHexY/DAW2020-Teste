@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Classes
+  p 
+  ul
+    each elem in lista
+      li 
+        a(href=`/classe/${elem.codigo}`) Código: #{elem.codigo} Titulo: #{elem.titulo}
+  a(href='/') [Voltar ao inicio]

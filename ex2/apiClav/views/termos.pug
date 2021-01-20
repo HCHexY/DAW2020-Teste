@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  a(href='/') [Voltar ao inicio]
+  h1 Termos de Indice
+  p
+  ul
+    each elem in lista
+      li(id =`${elem.id}`)
+        p Termo : #{elem.termo}
+        p Titulo da Classe : 
+          a(href=`/classe/${elem.codigoClasse.split('c')[1]}`) #{elem.tituloClasse}
+        p Id da Classe : 
+          a(href=`/classe/${elem.codigoClasse.split('c')[1]}`) #{elem.codigoClasse}
+  a(href='/') [Voltar ao inicio]
